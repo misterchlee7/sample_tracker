@@ -1,0 +1,15 @@
+<h1>Admins create styles here </h1>
+{{ product | json }}
+<form (submit)="onCreate()">
+  <p>styleNo: <input type="text" name="styleNo" [(ngModel)]="product.styleNo"></p>
+  <p>status: <select name="status" [(ngModel)]="product.status">
+    <option>Available</option>
+    <option>Unavailable</option>
+  </select></p>
+  <p>color: <input type="text" name="color" [(ngModel)]="product.color"></p>
+  <p>season: <input type="text" name="season" [(ngModel)]="product.season"></p>
+  <p>description:</p> 
+  <textarea placeholder="ruffled dress" name="description" [(ngModel)]="product.description"></textarea>
+  <p>location: <input type="text" name="location" [(ngModel)]="product.location"></p>
+  <input type="submit" value="Create">
+</form>

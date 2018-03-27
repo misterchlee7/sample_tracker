@@ -1,0 +1,38 @@
+#emptyCart {
+    width: 30%;
+    height: 50%;
+    background-color: gray;
+    display: inline-block;
+}
+
+#fullCart {
+    width: 30%;
+    height: 50%;
+    border: 1px solid black;
+    display: inline-block;
+}
+
+#cartHead {
+    width: 90%;
+}
+
+.cartItem {
+    border-bottom: 1px solid blue;
+}
+
+#search {
+    width: 40%;
+    height: 400px;
+    border: 1px solid black;
+    display: inline-block;
+}
+
+#searchBar {
+    width: 70%;
+    height: 30px;
+}
+
+.searchProduct {
+    height: 30%;
+    border-bottom: 1px solid red;
+}

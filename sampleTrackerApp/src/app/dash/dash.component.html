@@ -1,0 +1,35 @@
+<input id="searchBar" type="text" [(ngModel)]="term" placeholder="Search ...">
+<div id="search">
+  <div *ngFor = "let item of items |filter:term">
+    <div class="searchProduct">
+      <button (click)="onAdd(item._id)">+</button>
+      <p>{{item.styleNo}}</p>
+      <p>{{item.status}}</p>
+      <p>{{item.color}}</p>
+      <p>{{item.season}}</p>
+      <p>{{item.description}}</p>
+      <p>{{item.location}}</p>
+      <p>{{ item.createdAt | date:'MMM d, y, h:mm:ss a' }}</p>
+    </div>
+  </div>
+</div>  
+
+<div *ngIf="cartItems.length == 0" id="emptyCart">
+  <p>Please select items</p>
+</div>
+
+<div *ngIf="cartItems.length > 0" id="fullCart">
+  <div id="cartHead"><h3>Selected Items ({{cartCount}})</h3></div>
+  <div *ngFor="let cartItem of cartItems" class="cartItem">
+    <button (click)="onRemove(cartItem._id)">-</button>
+    <p>Style No: {{cartItem.styleNo}}</p>
+    <p>Status: {{cartItem.status}}</p>
+    <p *ngIf="cartItem._user">Taken By: {{cartItem._user}}</p>
+    <p>Color: {{cartItem.color}}</p>
+    <p>Season: {{cartItem.season}}</p>
+    <p>Description: {{cartItem.description}}</p>
+    <p>Location: {{cartItem.location}}</p>
+    <p>Created: {{ cartItem.createdAt | date:'MMM d, y, h:mm:ss a' }}</p>
+  </div>
+  <button (click)="onCheckout()">Checkout Selected Items</button>
+</div>

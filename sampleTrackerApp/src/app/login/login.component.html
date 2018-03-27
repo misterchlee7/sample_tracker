@@ -1,0 +1,16 @@
+<h1>Insert Logo</h1>
+<h1>Login</h1>
+
+{{ errors }}
+
+<button
+  *ngIf="!_httpService.isAuthenticated()"
+  (click)="_httpService.login()">
+  Login
+</button>
+
+<button
+  *ngIf="_httpService.isAuthenticated()"
+  (click)="_httpService.logout()">
+  Logout
+</button>
